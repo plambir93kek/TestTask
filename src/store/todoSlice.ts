@@ -6,6 +6,7 @@ export interface ToDo {
     text: string
 }
 
+//Создает нормализованный сетйт.
 export const todosAdapter = createEntityAdapter<ToDo>({
     selectId: (todo) => todo.id,
 });

@@ -8,7 +8,7 @@ import addicon from '../../incons/addicon.svg';
 import { useAppSelector } from '../../store/store';
 import { todoSelectors } from '../../store/todoSlice';
 
-
+//Главный компонент, рендерит все остальные, отвечает за состояния рекдактирования и добавления.
 const TaskDesk = () => {
   const [showForm, setShowForm] = useState(false);
   const [editMode, setEditMode] = useState(false);

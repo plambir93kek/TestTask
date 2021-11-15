@@ -8,7 +8,7 @@ interface AddFormProps {
     setShowForm: React.Dispatch<React.SetStateAction<boolean>>
 };
 
-
+// Форма добавления в список дел. Создает Id и диспатчит в стейт.
 const AddForm:React.FC<AddFormProps> = ({setShowForm}) => {
     
     const dispatch = useAppDispatch();

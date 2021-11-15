@@ -10,6 +10,7 @@ interface TaskItemProps {
     todo?: ToDo
 };
 
+// Компонент рендерит отдельный пункт списка, а также форму редактирования пункта.
 const TaskItem: React.FC<TaskItemProps> = ({ editMode, todo }) => {
 
     const dispatch = useAppDispatch();
