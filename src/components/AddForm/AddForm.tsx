@@ -5,17 +5,24 @@ import { AddContainer, AddFormButton, ButtonsContainer, InputAdd} from './styled
 import { nanoid } from 'nanoid';
 
 interface AddFormProps {
-    setShowForm: React.Dispatch<React.SetStateAction<boolean>>
+    setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
+    setEditMode: React.Dispatch<React.SetStateAction<boolean>>;
+    editMode: boolean;
 };
 
 // Форма добавления в список дел. Создает Id и диспатчит в стейт.
-const AddForm:React.FC<AddFormProps> = ({setShowForm}) => {
+const AddForm:React.FC<AddFormProps> = ({setShowForm, setEditMode, editMode}) => {
     
     const dispatch = useAppDispatch();
     const [textTodo, setTextTodo] = useState('')
 
     const addTodos = () => {
-       dispatch(addTodo({id: nanoid(), text: textTodo}))
+        if(textTodo){
+          dispatch(addTodo({id: nanoid(), text: textTodo}))
+          if(editMode){
+            setEditMode(false)
+          }
+        }
     }
 
     return (

@@ -38,7 +38,7 @@ const TaskDesk = () => {
      <img src={addicon} />
    </AddIcon>
    <CSSTransition in={showForm} timeout={500} mountOnEnter unmountOnExit>
-      <AddForm setShowForm={setShowForm} />
+      <AddForm setShowForm={setShowForm} setEditMode={setEditMode} editMode={editMode} />
    </CSSTransition>
   </MainWrapper>
     )
